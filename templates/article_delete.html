@@ -1,0 +1,19 @@
+{% extends 'main.html'%}
+{% load static %}
+{% block title %}
+    {{ object.title | title }} || O'chirish    
+{% endblock title %}
+
+{% block content %}
+    <div class="container-lg"  style="text-align: center;">
+        <h3>Maqolani o'chirish</h3>
+        <form action="" method="post">
+            {% csrf_token %}
+            <p>
+                Haqiqatdan ham "{{ object.title | title }}" maqolasini o'chirmoqchimisz?
+            </p>
+
+            <input type="submit" class="btn btn-primary" value="HA">
+        </form>
+    </div>
+{% endblock content %}

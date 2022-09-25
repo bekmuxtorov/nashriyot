@@ -1,0 +1,306 @@
+
+{% extends "main.html" %}
+{% load static %}
+{% block title %}
+Ma'rifat gazetasi
+{% endblock title %}
+
+{% block content %}
+
+<!-- Main satrt -->
+<section class="p-70 w-100 content-section">
+    <div class="container-lg">
+        <div class="row g-5">
+            <div class="col-lg-6">
+                <div class="feature-img position-relative">
+                    
+                    <div class="feature-img-owerflow position-relative">
+                        <img src="{{ article_0.image.url }}" alt="{{ article_0.title }}" class="img-fluid">
+                    </div>
+                    <div class="title-card text-white position-absolute bottom-0 mb-5 mx-5">
+                        <a href="{% url 'article_detail' pk=article_0.pk %}" class="btn-stayle mb-3">Batafsil</a>
+                        <div>
+                            <h4 class="text-decretion">{{ article_0.title }}</h4>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="feature-img-two position-relative mb-5">
+                    <div class="feature-img-owerflow position-relative">
+                        <img src="{{ article_1.image.url }}" alt="{{ article_1.title }}" class="img-fluid">
+                    </div>
+                    <div class="title-card text-white position-absolute bottom-0 mb-4 mx-5">
+                        <a href="{% url 'article_detail' pk=article_1.pk %}" class="btn-stayle mb-3">Batafsil</a>
+                        <div>   
+                            <h4 class="text-decretion">{{ article_1.title }}</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="row g-5">
+                    <div class="col-lg-6">
+                        <div class="feature-img-three position-relative">
+                            <div class="feature-img-owerflow position-relative">
+                                <img src="{{ article_2.image.url }}" alt="{{ article_2.title }}" class="img-fluid">
+                            </div>
+                            <div class="title-card text-white position-absolute bottom-0 mb-3 mx-3">
+                                <a href="{% url 'article_detail' pk=article_2.pk %}" class="btn-stayle mb-2">Batafsil</a>
+                                <div>
+                                    <h4 class="text-decretion">{{ article_2.title }}</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="feature-img-three position-relative">
+                            <div class="feature-img-owerflow position-relative">
+                                <img src="{{ article_3.image.url }}" alt="{{ article_3.title }}" class="img-fluid">
+                            </div>
+                            <div class="title-card text-white position-absolute bottom-0 mb-3 mx-3">
+                                <a href="{% url 'article_detail' pk=article_3.pk %}" class="btn-stayle mb-2">Batafsil</a>
+                                <div>
+                                    <h4 class="text-decretion">{{ article_3.title }}</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Main end -->
+
+<!-- Start -->
+<section class="p-70 w-100 bg-stayl content-section" id="mahalliy" >
+    <div class="container-lg">
+        <div class="title mt-3 mb-4 d-flex w-50">
+            <h3 class="fs-2">
+                Mahalliy
+            </h3>
+            <div class="d-flex flex-column w-25">
+                <span class="title-after mt-3 ms-3"></span>
+                <span class="title-beffore mt-1 ms-3"></span>
+            </div>
+        </div>
+        <div class="row g-3">
+            {% for mahalliy in articles_mahalliy %}
+            <div class="col-lg-3">
+                <div class="card border-0">
+                    <img src="{{ mahalliy.image.url }}" class="card-img-top" alt="{{ mahalliy.title }}">
+                    <div class="card-body">
+                        <p class="card-text fw-light">
+                            {{ mahalliy.title }}
+                        </p>
+                        <a href="{% url 'article_detail' pk=mahalliy.pk %}" class="read-link"><span class="fw-light">Batafsil</span>
+                            <i class="bi bi-arrow-right mt-1 ms-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+            
+            
+        </div>
+    </div>
+</section>
+<!-- End -->
+
+<!-- start -->
+<section class="p-70 w-100 position-relative content-section" >
+    <div class="container-lg">
+        <div class="d-flex justify-content-between">
+            <div class="title mt-3 mb-4 d-flex w-50">
+                <h3 class="fs-2">
+                    Dunyo
+                </h3>
+                <div class="d-flex flex-column w-25">
+                    <span class="title-after mt-3 ms-3"></span>
+                    <span class="title-beffore mt-1 ms-3"></span>
+                </div>
+            </div>
+            <button class="btn btn-primary button-stayl"><a href="{% url 'categories' '2' %}">Barchasi</a></button>
+        </div>
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="feature-img-four position-relative">
+                    <div class="feature-img-owerflow position-relative">
+                        <img src="{{ articles_dunyo_0.image.url }}" alt="{{ articles_dunyo_0.title }}" class="img-fluid">
+                    </div>
+                    <div class="title-card text-white position-absolute bottom-0 mb-5 mx-5">
+                        <a href="{% url 'article_detail' pk=articles_dunyo_0.pk %}" class="btn-stayle mb-3">Batafsil</a>
+                        <div>
+                            <h4 class="text-decretion">{{ articles_dunyo_0.title }}</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="scroll-bar position-relative w-100">
+                    
+                    {% for dunyo in articles_dunyo %}
+                    <div class="d-flex ms-4 align-items-center mb-3">
+                        <a href="{% url 'article_detail' pk=dunyo.pk %}">
+                            <img src="{{ dunyo.image.url }}" alt="{{ dunyo.title }}"
+                            class="img-thumbnail img-w-scroll-bar rounded-circle">
+                        </a>
+                        <div class="ms-4 w-100">
+                            <a href="{% url 'article_detail' pk=dunyo.pk %}"><span class="fw-light">Batafsil</span>
+                                <i class="bi bi-arrow-right mt-1 ms-2"></i>
+                            </a>
+                            <br>
+                            <h5 class="mt-1 fs-6 text-decretion">
+                                {{ dunyo.title }}
+                            </h5>
+                        </div>
+                    </div>
+                    {% endfor %}
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End -->
+
+<!-- Start -->
+<section class="p-70 w-100 position-relative video-bar content-section">
+    <div class="container-lg">
+        <div class="title mt-3 mb-4 d-flex w-50 text-white" id="moliya">
+            <h3 class="fs-2">
+                Moliya
+            </h3>
+            <div class="d-flex flex-column w-25">
+                <span class="title-after mt-3 ms-3"></span>
+                <span class="title-beffore mt-1 ms-3"></span>
+            </div>
+        </div>
+        <div class="row g-4">
+            <div class="col-lg-8   pl-70" >
+                <div class="feature-img-5 mb-3">
+                    <img src="{{ articles_moliya_0.image.url }}" alt="{{ articles_moliya_0.title }}" class="img-fluid">
+                </div>
+                <h4 class="text-white fs-1 text-decretion">
+                    {{ articles_moliya_0.title }}
+                </h4>
+            </div>
+            
+            <div class="col-lg-4">
+                <div class="video-scroll-bar position-relative w-100">
+                    {% for moliya in articles_moliya %}
+                    <div class="d-flex ms-0 ms-lg-4 align-items-center mb-3 me-1">
+                        <div class="w-100 text-white">
+                            <a style="color:blue;" href="{% url 'article_detail' pk=moliya.pk %}"><span class="fw-light">Batafsil</span>
+                                <i class="bi bi-arrow-right mt-1 ms-2"></i>
+                            </a>
+                            <br>
+                            <h5 class="mt-1 fs-6 text-decretion">
+                                {{moliya.title}}
+                            </h5>
+                        </div>
+                        <a href="{% url 'article_detail' pk=moliya.pk %}" >
+                            <img src="{{ moliya.image.url }}" alt="{{moliya.title}}" class="img-fluid img-w-scroll-bar" style="width:100% ;">
+                        </a>
+                    </div>
+                    {% endfor %}
+                    
+                </div>
+            </div>
+            
+            
+            
+            
+        </div>
+        <div class="video-pler" id="videoPlayer">
+            <video width="100%" controls autoplay id="myVideo">
+                <source src="{% static 'images/vide1.mp4' %}" type="video/mp4">
+            </video>
+            <i class="bi bi-play-circle-fill close-btn" onclick="stopVideo()"></i>
+        </div>
+    </div>
+</section>
+<!-- End -->
+
+<!-- General informatin start-->
+<section class="bg-stayl p-70 w-100 position-relative content-section">
+    <div class="container-lg">
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="title mt-3 mb-4 d-flex w-50 ">
+                    <h3 class="fs-2">
+                        Fan-Texnika 
+                    </h3>
+                    <div class="d-flex flex-column w-25">
+                        <span class="title-after mt-3 ms-3"></span>
+                        <span class="title-beffore mt-1 ms-3"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="title mt-3 mb-4 d-flex ms-4">
+                    <h3 class="fs-5">
+                        Sport
+                    </h3>
+                    <div class="d-flex flex-column w-25">
+                        <span class="title-after mt-3 ms-3"></span>
+                        <span class="title-beffore mt-1 ms-3"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row g-4">
+            <div class="col-lg-8">
+                {% for fan in articles_fan %}
+                <div class="bg-white d-flex align-items-center mb-4">
+                    <img  src="{{ fan.image.url }}" alt="{{ fan.title }}" class="img-stayl" width="35%">
+                    <div class="mx-5">
+                        <a href="{% url 'article_detail' pk=fan.pk %}"><span class="fw-light">Batafsil</span>
+                            <i class="bi bi-arrow-right mt-1 ms-2"></i>
+                        </a>
+                        <br>
+                        <h5 class="mt-3 fs-4 text-decretion">
+                            {{ fan.title }}
+                        </h5>
+                        </div>
+                </div>
+                {% endfor %}
+               
+
+                </div>
+                        
+                        <div class="col-lg-4">
+                            <div class="scroll-bar position-relative w-100">
+
+                                {% for sport in articles_sport %}
+                                <div class="d-flex ms-4 align-items-center mb-3">
+                                    <a href="{% url 'article_detail' pk=sport.pk %}">
+                                        <img src="{{ sport.image.url }}" alt="{{ sport.title }}"
+                                        class="img-thumbnail img-w-scroll-bar rounded-circle">
+                                    </a>
+                                    <div class="ms-4 w-100">
+                                        <a href="{% url 'article_detail' pk=sport.pk %}"><span class="fw-light">Batafsil</span>
+                                            <i class="bi bi-arrow-right mt-1 ms-2"></i>
+                                        </a>
+                                        <br>
+                                        <h5 class="mt-1 fs-6 text-decretion">
+                                            {{ sport.title }}
+                                        </h5>
+                                    </div>
+                                </div>
+                                {% endfor %}
+                             
+                                
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </section> 
+            
+            
+            
+            
+            {% endblock content %}
+            

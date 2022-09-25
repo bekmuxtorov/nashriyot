@@ -1,0 +1,38 @@
+{% extends 'main.html' %}
+{% block title %}
+  Qidiruv natijalari
+{% endblock title %}
+
+{% block content %}
+<section class="p-70 w-100 bg-stayl content-section">
+    <div class="container-lg">
+        <div class="title mt-3 mb-4 d-flex w-50">
+            <h3 class="fs-2">
+                Natijalar
+            </h3>
+            <div class="d-flex flex-column w-25">
+                <span class="title-after mt-3 ms-3"></span>
+                <span class="title-beffore mt-1 ms-3"></span>
+            </div>
+        </div>
+        <div class="row g-3">
+            {% for object in object_list %}
+            <div class="col-lg-3">
+                <div class="card border-0">
+                    <img src="{{ object.image.url }}" class="card-img-top" alt="{{ object.title }}">
+                    <div class="card-body">
+                        <p class="card-text fw-light">{{ object.title }}
+                        </p>
+                        <a href="{% url 'article_detail' pk=object.id %}" class="read-link"><span class="fw-light">Batafsil</span>
+                            <i class="bi bi-arrow-right mt-1 ms-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+           
+            
+        </div>
+    </div>
+</section>
+{% endblock content %}

@@ -1,0 +1,104 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block title %}
+    {{ category }} || Nashriyot
+{% endblock title %}
+
+{% block content %}
+{% if object_list_0 != None %}
+<section class="p-70 w-100 content-section">
+    <div class="container-lg">
+        <div class="row g-5">
+            <div class="col-lg-6">
+                <div class="feature-img position-relative">
+                    
+                    <div class="feature-img-owerflow position-relative">
+                        <img src="{{ object_list_0.image.url }}" alt="{{ object_list_0.title }}" class="img-fluid">
+                    </div>
+                    <div class="title-card text-white position-absolute bottom-0 mb-5 mx-5">
+                        <a href="{% url 'article_detail' pk=object_list_0.pk %}" class="btn-stayle mb-3">Batafsil</a>
+                        <div>
+                            <h4 class="text-decretion">{{ object_list_0.title }}</h4>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="feature-img-two position-relative mb-5">
+                    <div class="feature-img-owerflow position-relative">
+                        <img src="{{ object_list_1.image.url }}" alt="{{ object_list_1.title }}" class="img-fluid">
+                    </div>
+                    <div class="title-card text-white position-absolute bottom-0 mb-4 mx-5">
+                        <a href="{% url 'article_detail' pk=object_list_1.pk %}" class="btn-stayle mb-3">Batafsil</a>
+                        <div>   
+                            <h4 class="text-decretion">{{ object_list_1.title }}</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="row g-5">
+                    <div class="col-lg-6">
+                        <div class="feature-img-three position-relative">
+                            <div class="feature-img-owerflow position-relative">
+                                <img src="{{ object_list_2.image.url }}" alt="{{ object_list_2.title }}" class="img-fluid">
+                            </div>
+                            <div class="title-card text-white position-absolute bottom-0 mb-3 mx-3">
+                                <a href="{% url 'article_detail' pk=object_list_2.pk %}" class="btn-stayle mb-2">Batafsil</a>
+                                <div>
+                                    <h4 class="text-decretion">{{ object_list_2.title }}</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="feature-img-three position-relative">
+                            <div class="feature-img-owerflow position-relative">
+                                <img src="{{ object_list_3.image.url }}" alt="{{ object_list_3.title }}" class="img-fluid">
+                            </div>
+                            <div class="title-card text-white position-absolute bottom-0 mb-3 mx-3">
+                                <a href="{% url 'article_detail' pk=object_list_3.pk %}" class="btn-stayle mb-2">Batafsil</a>
+                                <div>
+                                    <h4 class="text-decretion">{{ object_list_3.title }}</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endif %}
+
+<section class="p-70 w-100 bg-stayl content-section">
+    <div class="container-lg">
+        <div class="title mt-3 mb-4 d-flex w-50">
+            <h3 class="fs-2">
+                Barchasi
+            </h3>
+            <div class="d-flex flex-column w-25">
+                <span class="title-after mt-3 ms-3"></span>
+                <span class="title-beffore mt-1 ms-3"></span>
+            </div>
+        </div>
+        <div class="row g-3">
+            {% for object_ in object_list %}
+            <div class="col-lg-3">
+                <div class="card border-0">
+                    <img src="{{ object_.image.url }}" class="card-img-top" alt="{{ object_.title }}">
+                    <div class="card-body">
+                        <p class="card-text fw-light">{{ object_.title }}
+                        </p>
+                        <a href="{% url 'article_detail' pk=object_.id %}" class="read-link"><span class="fw-light">Batafsil</span>
+                            <i class="bi bi-arrow-right mt-1 ms-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+           
+            
+        </div>
+    </div>
+</section>
+{% endblock content %}

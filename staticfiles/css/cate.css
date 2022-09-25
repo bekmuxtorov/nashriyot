@@ -1,0 +1,231 @@
+.collapse form{
+    margin-left: auto;
+}
+
+.content-section{
+    padding-top: 20px;
+}
+
+.cate{
+    background-color: #fff;
+    width: 100%;
+    z-index: 5;
+}
+
+
+
+.cate-items{
+    display: flex;
+    flex-direction: row;
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+    padding: 14px 0;
+    border-top: 1px solid ;
+    border-bottom: 1px solid ;
+    border-radius: 5px;
+    justify-content: space-between;
+}
+
+.cate-item{
+    list-style: none;
+    
+}
+
+.cate-item:not(:last-child){
+    margin-right: 20px;
+    
+}
+
+.cate-item a{
+    color: black;
+    font-weight: 500;
+    text-decoration: none;
+    font-size: 18px;
+    letter-spacing: 0.8px;
+    
+}
+
+.cate-item:hover a{
+    color: chartreuse;
+}
+
+.active a{
+    color: chartreuse;
+}
+
+.items{
+    display: flex;
+    flex-direction: column-reverse;
+    padding: 0;
+    margin: 0;
+    padding-top: 80px;
+}
+
+
+
+a{
+    color: #001000;
+    text-decoration: none;
+}
+
+.article-bg{
+    border-radius: 8px;
+    display: flex;
+    flex-direction: row !important;
+    background-color: #f2f7f2;
+    margin-bottom: 20px;
+}
+
+.article-bg:hover .bg-title{
+    color: blue; 
+
+}
+
+.article-bg a{
+    display: flex;
+}
+
+.bg-img{
+    border-radius: 10px 0 0 10px;
+    overflow: hidden;
+    width: 3x   x   0vw !important;
+}
+
+.bg-img img{
+    width: 382px;
+    height: 342px;
+    object-position: 50% 22%;
+    object-fit: cover;
+    border: 0;
+    vertical-align: middle;
+    display: inline-block;
+    width: 100%;
+    transition: all 0.7s;
+    
+}
+
+.blog-content{
+    padding: 20px 20px;
+    position: relative;
+    width: 70%;
+}
+
+
+.bg-author{
+    margin: 0;
+    padding: 0;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-size: 16px;
+    line-height: 22px;
+    color: #9aaa97;
+    font-weight: 500;
+    font-family: 'Neuemontreal', sans-serif;
+}
+
+.bg-title{
+    font-family: 'Neuemontreal', sans-serif;
+    color: #001e00;
+    font-size: 22px;
+    line-height: 25px;
+    font-weight: 500;
+    letter-spacing: -0.002em;
+}
+
+.bg-date{
+    font-style: 16px;
+    line-height: 22px;
+    color: #9aaa97;
+    font-weight: 500;
+    font-family: 'Neuemontreal', sans-serif;
+    position: relative;
+    bottom: 0;  
+    margin-top: 10px;  
+    
+}
+
+/* footer style */
+.footer{
+    padding: 2.5rem 0;
+    background-color: #0e2737;
+    margin-top: 100px;
+}
+.footer-area{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.footer-description{
+    font-size: 1.25rem;
+    letter-spacing: 1.9;
+    line-height: 1.5;
+    color: #fff;
+    text-align: center !important;
+}
+
+.footer-area h3{
+    font-size: 2.5rem;
+    font-weight: 600;
+    font-family: 'Exo 2',sans-serif;
+    color: #fff;
+    text-align: center;
+    padding-bottom: 1.875rem;
+}
+
+.footer-nav--items{
+    display: flex;
+    justify-content: center;
+}
+.footer-nav--item{
+    list-style: none;
+    transition: all 0.5s;
+    white-space: nowrap;
+}
+
+.footer-nav--item:not(:last-child){
+    margin-right: 1.25rem;
+}
+
+.footer-nav--item:hover a{
+    color: chartreuse;
+}
+
+.footer-nav--item a{
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.25rem;
+    letter-spacing: 1.9;
+    line-height: 1.5;
+    color: #fff;
+}
+
+.footer .social-media{
+    text-align: center;
+    margin: 1.875rem 0;
+}
+
+.footer .social-media div:not(:last-child){
+    margin-right: 2.5rem;
+}
+
+.footer .social-media a{
+    color:chartreuse;
+    text-decoration: none;
+    transition: all 0.5s;
+}
+
+.footer .social-media a:hover{
+    color: #fff;
+}
+
+
+.footer-footer{
+    color:#fff;
+    text-align: center;
+    font-weight: 600;
+    font-family: 'Exo 2',sans-serif;
+    margin-top: 1.25rem;
+}
+
