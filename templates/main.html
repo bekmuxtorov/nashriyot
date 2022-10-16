@@ -10,7 +10,9 @@
     integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.9.1/font/bootstrap-icons.min.css">
-    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="{% static 'css/main.css' %} ">
     <link rel="stylesheet" href="{% static 'css/cate.css' %}">
@@ -21,58 +23,63 @@
 
 <body>
     <header class="sticky-top py-2 bg-white">
-        <nav class="navbar navbar-expand-lg navbar-light bg-white">
-            <div class="container-lg">
-                <a class="navbar-brand" href="{% url 'all' %}">NASHRIYOT</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                {% if user.is_authenticated %}
-                <ul class="navbar-nav mb-2 mb-lg-0 ms-auto me-3">
-                    <li class="">
-                        <a class="  btn btn-primary" aria-current="page" href="{% url 'new_article' %}">+Yangi maqola qo'shish</a>
-                    </li>||
-                    
-                    <li class="">
-                        <a class=" btn btn-primary" href="{% url 'logout' %}">Chiqish</a>
-                    </li>
-                    
-                </ul>
-                {% else %}
-                <a href=" {% url 'login' %} " class="login-button" style="color: white;">Kirish</a>
-                
-                
-                {% endif %}
-                <form class="d-flex" action="{% url 'search_results' %}">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="q">
-                    <button class="btn btn-primary" type="submit">Search</button>
-                </form>
-            </div>
-        </div>
-    </nav>
-    
-    <section class="cate">
+        <div class="header-bg d-flex align-items-center justify-content-center" style="background: rgb(42,43,172);
+        background: radial-gradient(circle, rgba(42,43,172,1) 0%, rgba(94,99,230,1) 43%, rgba(49,215,249,1) 100%);">
+        <div class="bg-owerflov"></div>
+        <h1 class="text-center text-white header-bg-text">Nashriyot</h1>
+    </div>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white">
         <div class="container-lg">
-            <ul class="cate-items indicator">
-                <li class="cate-item" data-filter="all">
-                    <a href="{% url 'all' %}">
-                        Barchasi
-                    </a>
+            <a class="navbar-brand" href="{% url 'all' %}">NASHRIYOT</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            {% if user.is_authenticated %}
+            <ul class="navbar-nav mb-2 mb-lg-0 ms-auto me-3">
+                <li class="">
+                    <a class="  btn btn-primary" aria-current="page" href="{% url 'new_article' %}">+Yangi maqola qo'shish</a>
+                </li>||
+                
+                <li class="">
+                    <a class=" btn btn-primary" href="{% url 'logout' %}">Chiqish</a>
                 </li>
                 
-                {% for key, value in categories.items %}
-                <li class="cate-item" data-filter="all">
-                    <a href="{% url 'categories' key %}">
-                        {{ value }}
-                    </a>
-                </li>
-                {% endfor %}
             </ul>
+            {% else %}
+            <a href=" {% url 'login' %} " class="login-button" style="color: white;">Kirish</a>
+            
+            
+            {% endif %}
+            <form class="d-flex" action="{% url 'search_results' %}">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="q">
+                <button class="btn btn-primary" type="submit">Search</button>
+            </form>
         </div>
-    </section>
+    </div>
+</nav>
+
+<section class="cate">
+    <div class="container-lg">
+        <ul class="cate-items indicator">
+            <li class="cate-item" data-filter="all">
+                <a href="{% url 'all' %}">
+                    Barchasi
+                </a>
+            </li>
+            
+            {% for key, value in categories.items %}
+            <li class="cate-item" data-filter="all">
+                <a href="{% url 'categories' key %}">
+                    {{ value }}
+                </a>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</section>
 </header>
 <!-- MENU END -->
 

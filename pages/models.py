@@ -1,5 +1,3 @@
-from audioop import reverse
-from distutils.command.upload import upload
 from django.db import models
 from .const import Const
 from ckeditor.fields import RichTextField
@@ -7,10 +5,8 @@ from ckeditor.fields import RichTextField
 # Create your models here.
 class Articles(models.Model):
     categories = Const.categories
-
     title = models.CharField(max_length=100, verbose_name='Sarlavha:')
     image = models.ImageField()
-
     category = models.CharField(
         max_length=35,
         choices=categories,
@@ -20,10 +16,9 @@ class Articles(models.Model):
     body = RichTextField(verbose_name='Maqola matni:')
     blog_view = models.IntegerField(default=0)
 
-
     def get_absolute_url(self):
-        return reverse("article_detail", args=[str(self.id)])
-
+            return f"/article/{self.id}"
+    
     def get_category(self):
         return dict(Articles.categories)[self.category]
 
